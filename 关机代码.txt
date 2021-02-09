@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+	char write[100];
+	system ("shutdown -s -t 60");
+gt:
+	printf("快说你是猪！不然就关机！\n");
+	scanf("&s",write);
+	if (strcmp(write,"我是猪")==0)
+	{
+		printf("哈哈，你是猪~\n");
+		system("shutdown-a");
+	}
+	else
+	{
+		printf("还不说是吧，不说就关机！\n");
+		goto gt;
+	}
+	return 0 ;
+}

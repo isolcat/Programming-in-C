@@ -1,0 +1,42 @@
+//猜1个一百以内的整数，共五次机会
+#include<stdio.h>
+#include<time.h>
+#include <stdlib.h>
+#include <windows.h>
+int main()
+{
+	
+	int num;
+	int guess;//用户猜数字
+	int right;// 正确答案
+	int count;//已猜次数
+	srand ((unsigned)time(0));
+	while(1)
+	{
+		count = 0;
+		right =0 ;
+		num= rand ()%100;
+		printf("现在，游戏开始，请猜一个数字：");
+			while (count++<5){
+				scanf("%d",&guess);//小于5次，不断猜数
+				if(guess ==num)
+				{
+					right = 1;
+					printf ("恭喜猜对！\n");break;
+				}
+				else if (guess>num)
+					printf("大.\n");
+				else
+					printf("小.\n");
+			}
+			if(right == 0)
+				printf ("尝试5次，失败\n");
+			printf("是否继续?y/n:");
+			int c;
+			fflush(stdin);
+			c=getchar();
+			if (c=='n'||c=='N')
+				break;
+	}
+	return 0;
+}
